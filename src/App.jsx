@@ -16,8 +16,8 @@ function App() {
     setLoading(true);
     try {
       const [invRes, mlRes] = await Promise.all([
-        fetch('http://localhost:5000/api/inventory'),
-        fetch('http://localhost:5000/api/ml-metrics')
+        fetch(`${import.meta.env.VITE_API_URL}/api/inventory`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/ml-metrics`)
       ]);
 
       const [invData, mlData] = await Promise.all([
